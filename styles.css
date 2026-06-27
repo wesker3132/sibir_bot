@@ -1,1 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    max-width: 420px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border-radius: 24px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.05);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    color: #f5c842;
+    text-align: center;
+    letter-spacing: 6px;
+    text-shadow: 0 0 30px rgba(245, 200, 66, 0.15);
+    padding: 12px 0;
+    border-bottom: 2px solid #2a2a2a;
+    margin-bottom: 20px;
+}
+
+.player-card {
+    background: linear-gradient(145deg, #121212, #1e1e1e);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-left: 4px solid #f5c842;
+    margin-bottom: 20px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.avatar {
+    font-size: 44px;
+    background: #1a1a1a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #f5c842;
+    box-shadow: 0 0 20px rgba(245, 200, 66, 0.1);
+}
+
+.info { flex: 1; }
+.name { font-size: 18px; font-weight: 700; color: #fff; }
+.gold { color: #f5c842; font-weight: 700; }
+.rank { font-size: 14px; color: #888; margin-top: 4px; }
+.status { font-size: 13px; color: #666; margin-top: 4px; }
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.menu-btn {
+    background: linear-gradient(145deg, #141414, #1f1f1f);
+    color: #e0e0e0;
+    border: 1px solid #2a2a2a;
+    padding: 16px 8px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.menu-btn:hover {
+    background: #1f1f1f;
+    border-color: #f5c842;
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(245, 200, 66, 0.1);
+}
+
+.menu-btn .icon {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.btn-primary {
+    background: linear-gradient(145deg, #f5c842, #d4a830);
+    color: #0a0a0a;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(245, 200, 66, 0.15);
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 30px rgba(245, 200, 66, 0.25);
+}
+
+.btn-secondary {
+    background: #1f1f1f;
+    color: #aaa;
+    border: 1px solid #2a2a2a;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background: #2a2a2a;
+    border-color: #444;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #f5c842;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.2s;
+}
+
+.back-btn:hover { color: #fff; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    color: #e0e0e0;
+    font-size: 15px;
+    margin: 6px 0 14px 0;
+    transition: 0.25s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #f5c842;
+    box-shadow: 0 0 20px rgba(245, 200, 66, 0.05);
+}
+
+label {
+    color: #888;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+small, .hint {
+    color: #555;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+#tutorialContent {
+    background: linear-gradient(145deg, #121212, #1a1a1a);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 16px 0;
+    min-height: 280px;
+    border-left: 4px solid #f5c842;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+#tutorialContent h1 {
+    color: #f5c842;
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+
+#tutorialContent .subtitle {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.tutorial-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.tutorial-nav button {
+    background: #1f1f1f;
+    color: #ccc;
+    border: 1px solid #2a2a2a;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.tutorial-nav button:hover {
+    background: #2a2a2a;
+    border-color: #f5c842;
+}
+
+#skipTut {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #2a2a2a;
+    color: #666;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 13px;
+}
+
+#skipTut:hover {
+    border-color: #f5c842;
+    color: #f5c842;
+}
+
+.help-content {
+    background: #121212;
+    border-radius: 12px;
+    padding: 20px;
+    line-height: 2;
+    border: 1px solid #1f1f1f;
+}
+
+.help-content p { color: #aaa; }
+.help-content strong { color: #f5c842; }
+
+@media (max-width: 480px) {
+    #app { padding: 12px; }
+    .menu-grid { gap: 8px; }
+    .menu-btn { padding: 14px 6px; font-size: 13px; }
+    .player-card { flex-direction: column; text-align: center; }
+}

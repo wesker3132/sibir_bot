@@ -9,19 +9,17 @@
 </head>
 <body>
     <div id="app">
-        <!-- ===== ТУТОРИАЛ ===== -->
         <div id="tutorial">
             <div class="logo">⚓ СИБИРЬ</div>
             <div id="tutorialContent"></div>
             <div class="tutorial-nav">
-                <button id="tPrev" style="display:none;">← Назад</button>
+                <button id="tPrev" style="display:none;">Назад</button>
                 <span id="tPage">1 / 4</span>
-                <button id="tNext">Дальше →</button>
+                <button id="tNext">Дальше</button>
             </div>
             <button id="skipTut" class="btn-secondary">Пропустить туториал</button>
         </div>
 
-        <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
         <div id="mainMenu" style="display:none;">
             <div class="logo">⚓ СИБИРЬ</div>
             <div class="player-card">
@@ -40,7 +38,6 @@
             </div>
         </div>
 
-        <!-- ===== ЗАЯВКА ОНЛАЙН ===== -->
         <div id="onlinePage" style="display:none;">
             <button class="back-btn" onclick="showPage('menu')">← Назад в меню</button>
             <h2>Заявка Онлайн</h2>
@@ -55,7 +52,6 @@
             <button class="btn-primary" onclick="submitOnline()">Подать заявку</button>
         </div>
 
-        <!-- ===== ЗАЯВКА ОФФЛАЙН ===== -->
         <div id="offlinePage" style="display:none;">
             <button class="back-btn" onclick="showPage('menu')">← Назад в меню</button>
             <h2>Заявка Оффлайн</h2>
@@ -77,7 +73,6 @@
             <button class="btn-primary" onclick="submitOffline()">Далее</button>
         </div>
 
-        <!-- ===== ПОМОЩЬ ===== -->
         <div id="helpPage" style="display:none;">
             <button class="back-btn" onclick="showPage('menu')">← Назад</button>
             <h2>❓ Помощь</h2>
@@ -94,7 +89,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

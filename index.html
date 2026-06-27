@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сибирь</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- ===== ТУТОРИАЛ ===== -->
+        <div id="tutorial">
+            <div class="logo">⚓ СИБИРЬ</div>
+            <div id="tutorialContent"></div>
+            <div class="tutorial-nav">
+                <button id="tPrev" style="display:none;">← Назад</button>
+                <span id="tPage">1 / 4</span>
+                <button id="tNext">Дальше →</button>
+            </div>
+            <button id="skipTut" class="btn-secondary">Пропустить туториал</button>
+        </div>
+
+        <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
+        <div id="mainMenu" style="display:none;">
+            <div class="logo">⚓ СИБИРЬ</div>
+            <div class="player-card">
+                <div class="avatar">👤</div>
+                <div class="info">
+                    <div class="name" id="pName">Ник: <span class="gold">Гость</span></div>
+                    <div class="rank" id="pRank">Ранг: (0) Гость</div>
+                    <div class="status" id="pStatus">Статус: не создана</div>
+                </div>
+            </div>
+            <div class="menu-grid">
+                <button class="menu-btn" onclick="showPage('online')">📱 Заявка Онлайн</button>
+                <button class="menu-btn" onclick="showPage('offline')">📱 Заявка Оффлайн</button>
+                <button class="menu-btn" onclick="getStatus()">📋 Моя заявка</button>
+                <button class="menu-btn" onclick="showPage('help')">❓ Help</button>
+            </div>
+        </div>
+
+        <!-- ===== ЗАЯВКА ОНЛАЙН ===== -->
+        <div id="onlinePage" style="display:none;">
+            <button class="back-btn" onclick="showPage('menu')">← Назад в меню</button>
+            <h2>Заявка Онлайн</h2>
+            <label>Выберите сервер</label>
+            <select id="onlineServer">
+                <option value="18">Сервер 18</option>
+                <option value="21">Сервер 21</option>
+            </select>
+            <label>Введите игровой ник</label>
+            <input type="text" id="onlineNick" placeholder="Nick_Name">
+            <small>Формат: Nick_Name (первые буквы заглавные, разделены подчёркиванием)</small>
+            <button class="btn-primary" onclick="submitOnline()">Подать заявку</button>
+        </div>
+
+        <!-- ===== ЗАЯВКА ОФФЛАЙН ===== -->
+        <div id="offlinePage" style="display:none;">
+            <button class="back-btn" onclick="showPage('menu')">← Назад в меню</button>
+            <h2>Заявка Оффлайн</h2>
+            <label>Выберите сервер</label>
+            <select id="offlineServer">
+                <option value="18">Сервер 18</option>
+                <option value="21">Сервер 21</option>
+            </select>
+            <label>Введите игровой ник</label>
+            <input type="text" id="offlineNick" placeholder="Nick_Name">
+            <label>Номер телефона (в игре)</label>
+            <input type="text" id="offlinePhone" placeholder="123123">
+            <label>Соцсеть для связи</label>
+            <select id="offlineSocial">
+                <option value="VK">VK</option>
+                <option value="TG">TG</option>
+                <option value="DS">DS</option>
+            </select>
+            <button class="btn-primary" onclick="submitOffline()">Далее</button>
+        </div>
+
+        <!-- ===== ПОМОЩЬ ===== -->
+        <div id="helpPage" style="display:none;">
+            <button class="back-btn" onclick="showPage('menu')">← Назад</button>
+            <h2>❓ Помощь</h2>
+            <div class="help-content">
+                <p><strong>Команды в игре:</strong></p>
+                <p>/setspawn — «Дом Банды»</p>
+                <p>/f — чат банды</p>
+                <p>/b — сигнал помощи</p>
+                <p>/makekey — крафт стимула</p>
+                <br>
+                <p><strong>Формат ника:</strong></p>
+                <p>Nick_Name</p>
+                <p>Первые буквы заглавные, разделены подчёркиванием</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
